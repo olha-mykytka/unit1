@@ -1,0 +1,118 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  height: 100%;
+}
+
+/*---- apply a natural box layout model to all elements -------*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  font-family: $defaultFont;
+  font-weight: $normalWeight;
+  color: $fontColor;
+
+}
+
+// Header Wrapper
+#headerWrapper {
+  background-color: $primaryColor;
+  color: white; // Improved contrast
+  padding: 1rem 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center; // Center-align logo and title
+  padding: 0 $gutter;
+  gap: 12px; // Slightly increased spacing
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: $normalWeight;
+  }
+
+  img {
+    border-radius: 50%; // Circular logo for a modern look
+  }
+}
+
+// Navigation Wrapper
+#navWrapper {
+  background-color: $secondaryColor; // Soft neutral for navigation
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); // Subtle shadow for depth
+}
+
+nav {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  li {
+    flex: 1;
+    text-align: center;
+    background-color: transparent;
+
+    &.active {
+      background-color: $primaryColor;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 0.75rem;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+      background-color: darken($secondaryColor, 10%);
+      color: $fontColor;
+    }
+  }
+}
+
+// Main Content
+#mainWrapper {
+  padding: 2rem $gutter;
+  text-align: center;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: $normalWeight;
+    color: $primaryColor;
+  }
+}
+
+// Footer Wrapper
+#footerWrapper {
+  background-color: $primaryColor;
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+footer {
+  padding: 0.5rem $gutter;
+
+  p {
+    margin: 0;
+    font-weight: $lightWeight;
+    font-size: 0.9rem;
+
+    span#year {
+      font-weight: bold;
+    }
+  }
+}
